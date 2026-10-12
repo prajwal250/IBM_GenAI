@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+    <head>
+        <meta charset = 'UTF-8' />
+        <meta name = 'viewport' content = 'width  =  1536, height  =  730, initial-scale = 1.0'>
+        <title>AI Text to Image Generator for IBM PBEL GenAI Project</title>
+        <link rel = 'stylesheet' href = 'IBM_NASSCOM_PBEL_Design.css' />
+        <link rel = 'icon' href = 'IBM_NASSCOM_PBEL_Logo_Icon.png' type = 'image/png' />
+    </head>
+    <body>
+        <div id = 'userStatusArea'>
+            <img id = 'userPhoto' src = 'https://www.gravatar.com/avatar/?d=mp' alt = 'User Photo'/>
+            <div id = 'userInfo'>
+                <p class = 'urow-name'><span class = 'lbl'>Username</span><span class = 'sep'>:</span><br><span class = 'val' id = 'userName'></span></p>
+                <p class = 'urow-email'><span class = 'lbl'>Email</span><span class = 'sep'>:</span><br><span class = 'val' id = 'userEmail'></span></p>
+                <p class = 'urow-created'><span class = 'lbl'>User firebase account created at</span><span class = 'sep'>:</span><br><span class = 'val' id = 'accountcreationtime'></span></p>
+            </div>
+            <button id = 'authToggleBtn'></button>
+        </div>
+        <div id = 'mainarea'>
+            <h1 id = 'webTitle'>Stable Diffusion Text To Image Generator by Prajwal Das</h1>
+            <form id = 'promptForm' autocomplete = 'off'>
+                <label for = 'promptInput'>Enter your prompt<span class = 'sep'>:</span></label>
+                <input type = 'text' id = 'promptInput' placeholder = 'Describe the image you want to generate' required /><br>
+                <label for = 'apis'>Enter your API key<span class = 'sep'>:</span></label>
+                <input type = 'text' id = 'apis' placeholder = 'Place Image Generation API key here' required /><br>
+                <button type = 'submit' id = 'generateButton'>Generate Image</button>
+                <button type = 'reset' id = 'resetButton'>Reset Form</button>
+            </form>
+            <h3><span id = 'info-giver'></span> <span id = 'typingdotsanimation'></span></h3>
+            <h3 id = 'time-displayer'></h3>
+            <img id = 'resultImage' alt = 'Generated Image' />
+            <button id = 'downloadbtn'>Download Image</button>
+            <h3>Note: For the Image Generation API key, create an account and generate a key <a id = 'fapiks' target = '_blank'>here</a>. Paste it in the API key input above. After your first successful image generation, the input field will auto-fill with your last used key, so you won't need to re-enter or save it. Generated images will appear below. </h3>
+            <div id = 'imageHistory'></div>
+        </div>
+        <button id = 'about-the-creator-btn'>About the Creator</button>
+        <div id = 'popup-overlay'></div>
+        <div id = 'about-the-creator'>
+            <h2>About the Creator</h2>
+            <a href = 'https://www.linkedin.com/in/prajwal250/' target = '_blank'><img src = '/User_Contact_Form/Creator_Photo.jpg' alt = 'Prajwal Das' /></a>
+            <p><span class = 'f-copy'>©</span> <span class = 'f-date'>22nd July 2025</span>, released under <a href = 'https://github.com/prajwal250/IBM_GenAI/blob/main/LICENSE' target = '_blank'>MIT License</a>.</p>
+            <p>Created by <span class = 'f-name'>Prajwal Das</span>, a <span class = 'f-year'>2nd Year</span> student of <span class = 'f-course'>B.Tech CSE</span> at <a href = 'https://www.ipec.org.in/' target = '_blank'>IPEC, Ghaziabad</a>, affiliated with <a href = 'https://aktu.ac.in/' target = '_blank'>AKTU, Lucknow</a>.</p>
+            <p>Built under <span class = 'f-mini'>IBM NASSCOM PBEL GenAI Internship (Batch 2)</span>, held from <span class = 'drt-date'>18th to 31st July 2025</span>. Certificate received on <span class = 'crf-date'>4th August 2025</span>: <a href = 'https://courses.ibmmooc.skillsnetwork.site/certificates/0adc486afc33404c8f14230f0ec466ac' target = '_blank'>View Certificate</a>.</p>
+            <p>A Free Text-to-Image GenAI Web App with Sign-In, Built-in Image Hosting and Shareable Links, and a Full History of your Generation Prompts, Images, Durations and Timestamps.</p>
+            <p>Official Site : <a href = 'https://prajwal250.github.io/IBM_GenAI/' target = '_blank'>https://prajwal250.github.io/IBM_GenAI/</a>.</p>
+            <p>Facing image generation issues, found a bug, or have a suggestion? Please let me know through the <a href = '/User_Contact_Form/' target = '_blank'>Contact Form</a>.</p>
+            <button id = 'close-creator-info'>Close</button>
+        </div>
+    </body>
+    <script src = 'https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js'></script>
+    <script src = 'https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics-compat.js'></script>
+    <script src = 'https://www.gstatic.com/firebasejs/10.11.0/firebase-auth-compat.js'></script>
+    <script src = 'https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore-compat.js'></script>
+    <script src = 'IBM_NASSCOM_PBEL_Working.js'></script>
+    <noscript id = 'js-disabled'>
+        <style> body { display: block; } #userStatusArea, #mainarea, #about-the-creator-btn { display: none; } </style>
+        <h1>JavaScript is disabled! Please enable Javascript as it is neccesary for the working and proper functioning of this website.</h1>
+    </noscript>
+</html>
